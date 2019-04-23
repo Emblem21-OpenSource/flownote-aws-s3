@@ -1,0 +1,16 @@
+{
+  "name": "flownote-aws-s3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.441.0",
+    "esm": "^3.2.22",
+    "flownote": "^1.0.0-beta.6"
+  }
+}
