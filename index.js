@@ -7,7 +7,7 @@ const Actions = [
    * @param  AWS.S3.BucketName
    * @return {Object} as AWS.S3.Bucket.result
    */
-  new Action('AWS.S3.createBucket', async function createBucket () {
+  new Action('createBucket', async function createBucket () {
     const bucketName = this.get('AWS.S3.BucketName')
 
     const parameters = {
@@ -25,7 +25,7 @@ const Actions = [
    * @param  AWS.S3.UploadBody
    * @return {Object} AWS.S3Bucket.uploadFileToBucket.result
    */
-  new Action('AWS.S3.uploadFileToBucket', async function uploadFileToBucket () {
+  new Action('uploadFileToBucket', async function uploadFileToBucket () {
     const bucketName = this.get('AWS.S3.BucketName')
     const fileName = this.get('AWS.S3.UploadFileName')
     const body = this.get('AWS.S3.UploadBody')
@@ -47,7 +47,7 @@ const Actions = [
    * @param  AWS.S3.UploadStream
    * @return {Object} AWS.S3Bucket.uploadStreamToBucket.result
    */
-  new Action('AWS.S3.uploadStreamToBucket', async function uploadStreamToBucket () {
+  new Action('uploadStreamToBucket', async function uploadStreamToBucket () {
     const bucketName = this.get('AWS.S3.BucketName')
     const fileName = this.get('AWS.S3.UploadFileName')
     const stream = this.get('AWS.S3.UploadStream')
@@ -69,7 +69,7 @@ const Actions = [
    * @param  AWS.S3.CopyDestination
    * @return {Object} AWS.S3Bucket.copyObject.result
    */
-  new Action('AWS.S3.copyObject', async function copyObject () {
+  new Action('copyObject', async function copyObject () {
     const bucketName = this.get('AWS.S3.BucketName')
     const copySource = this.get('AWS.S3.CopySource')
     const destination = this.get('AWS.S3.CopyDestination')
@@ -89,7 +89,7 @@ const Actions = [
    * @param  AWS.S3.CopySource
    * @return {String} AWS.S3.DeleteFileName
    */
-  new Action('AWS.S3.prepareDeleteAfterCopy', function prepareDeleteAfterCopy () {
+  new Action('prepareDeleteAfterCopy', function prepareDeleteAfterCopy () {
     const copySource = this.get('AWS.S3.CopySource')
     this.set('AWS.S3.DeleteFileName', copySource)
   }),
@@ -99,7 +99,7 @@ const Actions = [
    * @param  AWS.S3.BucketName
    * @return {Object}  AWS.S3Bucket.deleteBucket.result
    */
-  new Action('AWS.S3.deleteBucket', async function deleteBucket () {
+  new Action('deleteBucket', async function deleteBucket () {
     const bucketName = this.get('AWS.S3.BucketName')
 
     const parameters = {
@@ -116,7 +116,7 @@ const Actions = [
    * @param  AWS.S3.DeleteFileName
    * @return {Object}  AWS.S3Bucket.deleteObject.result
    */
-  new Action('AWS.S3.deleteObject', async function deleteObject () {
+  new Action('deleteObject', async function deleteObject () {
     const bucketName = this.get('AWS.S3.BucketName')
     const fileName = this.get('AWS.S3.DeleteFileName')
 
@@ -135,7 +135,7 @@ const Actions = [
    * @param  AWS.S3.DeleteFileNames
    * @return {Object}  AWS.S3Bucket.deleteObjects.result
    */
-  new Action('AWS.S3.deleteObjects', async function deleteObjects () {
+  new Action('deleteObjects', async function deleteObjects () {
     const bucketName = this.get('AWS.S3.BucketName')
     const fileNames = this.get('AWS.S3.DeleteFileNames')
 
@@ -158,7 +158,7 @@ const Actions = [
    * @param  AWS.S3.DeleteFileName
    * @return {Object}  AWS.S3Bucket.getObject.result
    */
-  new Action('AWS.S3.getObject', async function getObject () {
+  new Action('getObject', async function getObject () {
     const bucketName = this.get('AWS.S3.BucketName')
     const fileName = this.get('AWS.S3.GetFileName')
 
@@ -175,7 +175,7 @@ const Actions = [
    * [listBuckets description]
    * @return {Object}  AWS.S3Bucket.listBuckets.result
    */
-  new Action('AWS.S3.listBuckets', async function listBuckets () {
+  new Action('listBuckets', async function listBuckets () {
     const result = await new AWS.S3().listBuckets().promise()
     this.set(`AWS.S3Bucket.listBuckets.result`, result)
   }),
@@ -186,7 +186,7 @@ const Actions = [
    * @param  AWS.S3.ListMaxKeys
    * @return {Object}  AWS.S3Bucket.listObjects.result
    */
-  new Action('AWS.S3.listObjects', async function listObjects () {
+  new Action('listObjects', async function listObjects () {
     const bucketName = this.get('AWS.S3.BucketName')
     const MaxKeys = this.get('AWS.S3.ListMaxKeys')
 
@@ -204,7 +204,7 @@ const Actions = [
    * @param  AWS.S3.BucketName
    * @return {Object}  AWS.S3Bucket.waitForBucket.result
    */
-  new Action('AWS.S3.waitForBucket', async function waitForBucket () {
+  new Action('waitForBucket', async function waitForBucket () {
     const bucketName = this.get('AWS.S3.BucketName')
 
     const parameters = {
@@ -221,7 +221,7 @@ const Actions = [
    * @param  AWS.S3.WaitForObject
    * @return {Object}  AWS.S3Bucket.waitForObject.result
    */
-  new Action('AWS.S3.waitForObject', async function waitForObject () {
+  new Action('waitForObject', async function waitForObject () {
     const bucketName = this.get('AWS.S3.BucketName')
     const filename = this.get('AWS.S3.WaitForObject')
 
