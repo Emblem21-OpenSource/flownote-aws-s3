@@ -1,16 +1,18 @@
 {
   "name": "flownote-aws-s3",
   "version": "1.0.0",
-  "description": "",
+  "description": "Provides FlowNote Nodes and Actions for basic S3 operations.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Patrick Ryan <patrick.ryan@emblem21.com>",
   "license": "MIT",
   "dependencies": {
     "aws-sdk": "^2.441.0",
-    "esm": "^3.2.22",
     "flownote": "^1.0.0-beta.6"
+  },
+  "devDependencies": {
+    "esm": "^3.2.22"
   }
 }

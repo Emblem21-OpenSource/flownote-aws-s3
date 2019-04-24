@@ -1,0 +1,13 @@
+node AWS.S3.CreateBucket = AWS.S3.createBucket
+node AWS.S3.UploadFileToBucket = AWS.S3.uploadFileToBucket
+node AWS.S3.UploadStreamToBucket = AWS.S3.uploadStreamToBucket
+node AWS.S3.CopyObject = AWS.S3.copyObject
+node AWS.S3.DeleteBucket = AWS.S3.deleteBucket
+node AWS.S3.DeleteObject = AWS.S3.deleteObject
+node AWS.S3.DeleteObjects = AWS.S3.deleteObjects
+node AWS.S3.MoveObject = AWS.S3.copyObject, AWS.S3.prepareDeleteAfterCopy, AWS.S3.deleteObject
+node AWS.S3.GetObject = AWS.S3.getObject
+node AWS.S3.ListBuckets = AWS.S3.listBuckets
+node AWS.S3.ListObjects = AWS.S3.listObjects
+node AWS.S3.WaitForBucket = AWS.S3.waitForBucket
+node AWS.S3.WaitForObject = AWS.S3.waitForObject
